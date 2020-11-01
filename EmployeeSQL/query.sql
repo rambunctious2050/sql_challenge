@@ -1,11 +1,9 @@
---The following commands query the 
+--The following commands query the database for the following tasks. 
 
 --List the following details of each employee: employee number, last name, first name, sex, and salary
-CREATE VIEW employee_details AS
 SELECT employees.emp_no, employees.last_name, employees.first_name, employees.sex, salaries.salary
 FROM salaries
-INNER JOIN employees ON employees.emp_no = salaries.emp_no 
-SELECT*FROM employee_details
+LEFT JOIN employees ON employees.emp_no = salaries.emp_no 
 
 --List first name, last name, and hire date for employees who were hired in 1986.
 SELECT first_name, last_name, hire_date FROM employees
